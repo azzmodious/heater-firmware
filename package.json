@@ -1,0 +1,29 @@
+{
+  "name": "heater-firmware",
+  "version": "1.0.0",
+  "description": "firm ware for my furnace",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azzmodious/heater-firmware.git"
+  },
+  "keywords": [
+    "fauxmo",
+    "js",
+    "wemo",
+    "raspberry",
+    "pi"
+  ],
+  "author": "Max Randolph",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azzmodious/heater-firmware/issues"
+  },
+  "homepage": "https://github.com/azzmodious/heater-firmware#readme",
+  "dependencies": {
+    "fauxmojs": "^0.2.3"
+  }
+}
