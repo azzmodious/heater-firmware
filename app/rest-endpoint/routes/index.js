@@ -38,4 +38,12 @@ function turnOnDevice(){
 		});	
 	});
 }
+
+function cleanup(options, err){
+    console.info('cleaning things up...');
+    gpio.close(11);
+}
+
+process.on('SIGINT', cleanup.bind(null, {exit:true}));
 module.exports = router;
+//module.exports = gpio;
