@@ -16,6 +16,15 @@ This must run as root to allow the program to get to the gpio pins
 sudo npm start
 ```
 
+### Use Echo Activation
+```
+node index.js
+```
+
+Say "Alexia turn on house heater"
+or
+Say "Alexia turn off house heater"
+
 
 ## REST API
 
@@ -28,3 +37,4 @@ curl http://192.168.200.167:1337/device/on
 ```
 http://192.168.200.167:1337/device/off
 ```
+
