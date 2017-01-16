@@ -83,6 +83,7 @@ function turnOnDevice() {
 function cleanup(options, err) {
     console.info('cleaning things up...');
     gpio.close(11);
+    gpio.close(13);
 }
 
 process.on('SIGINT', cleanup.bind(null, { exit: true }));
