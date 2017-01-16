@@ -32,10 +32,10 @@ function changeDeviceState(req, res) {
 }
 
 function altOnDevice() {
-    gpio.setup(11, gpio.DIR_OUT, write);
+    gpio2.setup(11, gpio.DIR_OUT, write);
 
     function write() {
-        gpio.write(11, true, function (err) {
+        gpio2.write(11, true, function (err) {
             if (err) throw err;
             console.log('Written to pin');
         });
@@ -43,10 +43,10 @@ function altOnDevice() {
 }
 
 function altOffDevice() {
-    gpio.setup(11, gpio.DIR_OUT, write);
+    gpio2.setup(11, gpio.DIR_OUT, write);
 
     function write() {
-        gpio.write(11, false, function (err) {
+        gpio2.write(11, false, function (err) {
             if (err) throw err;
             console.log('Written to pin');
         });
