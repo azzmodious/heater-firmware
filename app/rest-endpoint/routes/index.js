@@ -33,7 +33,7 @@ function turnOnDevice(){
 
 	gpio.open(11, "output", function(err){
 		gpio.write(11, 1, function(){
-		gpio.close(11);
+		//gpio.close(11);
 		console.info("Relay on");
 		});	
 	});
