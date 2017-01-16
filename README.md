@@ -8,3 +8,23 @@ Setup is simple. You will need fauxmo js and a lib for gpio control. I am sticki
 ```
 npm install
 ```
+
+## Run
+This must run as root to allow the program to get to the gpio pins
+
+```
+sudo npm start
+```
+
+
+## REST API
+
+### Turn on Heater and Pump
+```
+curl http://192.168.200.167:1337/device/on
+```
+
+### Turn off Heater and Pump
+```
+http://192.168.200.167:1337/device/off
+```
