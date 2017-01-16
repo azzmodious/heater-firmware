@@ -2,6 +2,10 @@ var express = require('express');
 var router = express.Router();
 var gpio = require("pi-gpio");
 var gpio2 = require('rpi-gpio');
+
+var heaterpin = 11;
+var pumppin = 13;
+
 router.get('/', function (req, res, next) {
     res.send('Hello World');
 });
@@ -32,26 +36,40 @@ function changeDeviceState(req, res) {
 }
 
 function altOnDevice() {
-    gpio2.setup(11, gpio.DIR_OUT, write);
-
+    gpio2.setup(heaterpin, gpio2.DIR_OUT, write);
+    gpio2.setup(pumppin, gpio2.DIR_OUT, function(){
+        gpio2.write(pumppin, true, function(err){
+            if(err) throw err;
+            console.log('pump relay on');
+        });
+    });
     function write() {
-        gpio2.write(11, true, function (err) {
+        gpio2.write(heaterpin, true, function (err) {
             if (err) throw err;
-            console.log('Written to pin');
+            console.log('heater relay on');
         });
     }
 }
 
 function altOffDevice() {
-    gpio2.setup(11, gpio.DIR_OUT, write);
+    gpio2.setup(heaterpin, gpio2.DIR_OUT, write);
+    gpio2.setup(pumppin, gpio2.DIR_OUT, function(){
+        gpio2.write(pumppin, false, function(err){
+            if(err) throw err;
+            console.log('pump relay on');
+        });
+    });
 
     function write() {
-        gpio2.write(11, false, function (err) {
+        gpio2.write(heaterpin, false, function (err) {
             if (err) throw err;
             console.log('Written to pin');
         });
     }
 }
+
+
+
 function turnOnDevice() {
 
     gpio.open(11, "output", function (err) {
