@@ -37,4 +37,17 @@ curl http://192.168.200.167:1337/device/on
 ```
 http://192.168.200.167:1337/device/off
 ```
+### Using Forever Service 
+Ref: https://causeyourestuck.io/2016/04/30/run-node-js-script-startup/
 
+#### Install Forever / Forever Service
+```
+sudo npm install forever -g
+sudo npm install forever-service -g
+```
+
+#### Install Service
+```
+cd app/rest-endpoint/
+sudo forever-service install HeaterService
+```
